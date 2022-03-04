@@ -26,6 +26,8 @@ data Extensions = Antiquotation
                 | ObjC
                 | CUDA
                 | OpenCL
+                | Metal
+                | Cpp
   deriving (Eq, Ord, Enum, Show)
 
 data Id = Id     String !SrcLoc

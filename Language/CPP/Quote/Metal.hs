@@ -26,13 +26,13 @@ module Language.C.Quote.Metal (
     cfun
   ) where
 
-import qualified Language.C.Parser as P
-import qualified Language.C.Syntax as C
+import qualified Language.Metal.Parser as P
+import qualified Language.Metal.Syntax as M
 import Language.C.Quote.Base (ToIdent(..), ToConst(..), ToExp(..), quasiquote)
 import Language.Haskell.TH.Quote (QuasiQuoter)
 
-exts :: [C.Extensions]
-exts = [C.Metal]
+exts :: [M.Extensions]
+exts = [M.Metal]
 
 typenames :: [String]
 typenames =

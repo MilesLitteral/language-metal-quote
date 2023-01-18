@@ -31,12 +31,16 @@ import qualified Language.Metal.Syntax as M
 import Language.C.Quote.Base (ToIdent(..), ToConst(..), ToExp(..), quasiquote)
 import Language.Haskell.TH.Quote (QuasiQuoter)
 
+basicIncludes :: String
+basicIncludes = "#include <metal_stdlib>\n using namespace metal\n"
+
 exts :: [M.Extensions]
 exts = [M.Metal]
 
 typenames :: [String]
 typenames =
-    ["kernel", "device"] ++
+    ["kernel", "device", "texture2d", "texture", "uint2", "access::read", "access::write",
+     "half", "half4"] ++
     ["bool", "char", "uchar", "short", "ushort", "int", "uint",
      "long" , "ulong", "float", "half", "double"]
     ++ ["size_t", "ptrdiff_t", "intptr_t", "uintpyt_t", "void"]
